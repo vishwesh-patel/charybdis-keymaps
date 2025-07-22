@@ -50,6 +50,29 @@
         };
     };
 
+    macros {
+        tmux_attach: tmux_attach {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp T &kp A &kp ENTER>;
+            label = "TMUX_ATTACH";
+        };
+
+        tmux_create_pane: tmux_create_pane {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp C>;
+            label = "TMUX_CREATE_PANE";
+        };
+
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp C>;
+            label = "NEW_MACRO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
