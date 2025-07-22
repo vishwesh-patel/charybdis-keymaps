@@ -155,6 +155,20 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        left_round_par {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <7 8>;
+        };
+
+        right_round_par {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <9 10>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
