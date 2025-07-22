@@ -68,15 +68,78 @@
         tmux_pane_h: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(B) &kp H>;
+            bindings = <&kp LC(B) &kp LEFT>;
             label = "NEW_MACRO";
         };
 
         tmux_pane_j: tmux_pane_j {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(B) &kp J>;
+            bindings = <&kp LC(B) &kp DOWN>;
             label = "TMUX_PANE_J";
+        };
+
+        tmux_pane_k: tmux_pane_k {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp UP>;
+            label = "TMUX_PANE_K";
+        };
+
+        tmux_pane_l: tmux_pane_l {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp RIGHT>;
+            label = "TMUX_PANE_L";
+        };
+
+        tmux_win_n: tmux_win_n {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp N>;
+            label = "TMUX_WIN_N";
+        };
+
+        tmux_win_p: tmux_win_p {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp P>;
+            label = "TMUX_WIN_P";
+        };
+
+        tmux_sess_s: tmux_sess_s {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp S>;
+            label = "TMUX_SESS_S";
+        };
+
+        tmux_fuzzy_f: tmux_fuzzy_f {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp LS(F)>;
+            label = "TMUX_FUZZY_F";
+        };
+
+        tmux_detach: tmux_detach {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp D>;
+            label = "TMUX_DETACH";
+        };
+
+        tmux_split_v: tmux_split_v {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp PERCENT>;
+            label = "TMUX_SPLIT_V";
+        };
+
+        tmux_split_h: tmux_split_h {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp DOUBLE_QUOTES>;
+            label = "TMUX_SPLIT_H";
         };
     };
 
@@ -106,7 +169,7 @@
 &bt BT_SEL 0  &bt BT_PRV  &bt BT_NXT  &trans     &trans     &trans       &trans    &kp PAGE_UP    &trans  &bt BT_CLR_ALL  &bt BT_CLR  &bt BT_DISC 0
 &bt BT_SEL 1  &trans      &kp LA(H)   &kp LA(J)  &kp LA(K)  &kp LA(L)    &kp LEFT  &kp DOWN       &kp UP  &kp RIGHT       &trans      &bt BT_DISC 1
 &bt BT_SEL 2  &trans      &trans      &trans     &trans     &trans       &trans    &kp PAGE_DOWN  &trans  &trans          &trans      &bt BT_DISC 2
-                                      &trans     &mo 3      &trans       &trans    &trans
+                                      &mo 5      &mo 3      &trans       &trans    &trans
             >;
         };
 
@@ -124,16 +187,16 @@
 &trans  &kp C_VOLUME_UP    &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp C_VOLUME_DOWN  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp K_MUTE         &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                   &trans  &trans  &trans    &trans  &trans
+                                   &trans  &trans  &trans    &trans  &mo 5
             >;
         };
 
         TMUX {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
+&trans  &trans        &trans        &trans             &trans         &tmux_split_v    &trans        &trans        &trans        &trans        &tmux_win_p  &trans
+&trans  &tmux_attach  &tmux_sess_s  &tmux_detach       &tmux_fuzzy_f  &trans           &tmux_pane_h  &tmux_pane_j  &tmux_pane_k  &tmux_pane_l  &trans       &trans
+&trans  &trans        &trans        &tmux_create_pane  &trans         &tmux_split_h    &tmux_win_n   &trans        &trans        &trans        &trans       &trans
+                                    &trans             &trans         &trans           &trans        &trans
             >;
         };
     };
