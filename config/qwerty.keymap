@@ -65,11 +65,18 @@
             label = "TMUX_CREATE_PANE";
         };
 
-        new_macro: new_macro {
+        tmux_pane_h: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(B) &kp C>;
+            bindings = <&kp LC(B) &kp H>;
             label = "NEW_MACRO";
+        };
+
+        tmux_pane_j: tmux_pane_j {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp J>;
+            label = "TMUX_PANE_J";
         };
     };
 
