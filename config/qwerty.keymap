@@ -167,6 +167,26 @@
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <9 10>;
         };
+
+        right_curly_par {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <21 22>;
+        };
+
+        left_curly_par {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <19 20>;
+        };
+
+        left_sqr_par {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <31 32>;
+        };
+
+        right_sqr_par {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <33 34>;
+        };
     };
 
     keymap {
