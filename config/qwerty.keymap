@@ -187,6 +187,36 @@
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <33 34>;
         };
+
+        equal_sign {
+            bindings = <&kp EQUAL>;
+            key-positions = <1 2>;
+        };
+
+        plus_sign {
+            bindings = <&kp PLUS>;
+            key-positions = <3 4>;
+        };
+
+        minus_sign {
+            bindings = <&kp MINUS>;
+            key-positions = <15 16>;
+        };
+
+        underscore_sign {
+            bindings = <&kp LS(UNDERSCORE)>;
+            key-positions = <13 14>;
+        };
+
+        double_qoutes {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <27 28>;
+        };
+
+        single_quotes {
+            bindings = <&kp LS(SINGLE_QUOTE)>;
+            key-positions = <25 26>;
+        };
     };
 
     keymap {
